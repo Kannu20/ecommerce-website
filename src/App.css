@@ -1,38 +1,351 @@
-.App {
-  text-align: center;
+.headerWrapper {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  padding: -10px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Flex layout for the entire header */
+.header-row {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Logo */
+.logo-img {
+  height: 70px;
+  max-width:90%;
+}
+
+/* Country dropdown */
+.country-dropdown {
+  width: 110px;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+}
+
+/* Search bar container */
+.search-bar {
+  display: flex;
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  overflow: hidden;
+  padding:  0px;
+  width: 380px;
+  margin: 1 20px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 8px 15px;
+  flex: 1;
+  background-color: transparent;
+  border-radius: 25px 0 0 25px;
+  font-size: 14px;
+}
+
+.search-btn {
+  background-color: #56a8ff;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 0 25px 25px 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Icons section */
+.icons-container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon-hover {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.icon-hover:hover {
+  color: #3080d5;
+}
+
+/* User and Login */
+.user-img {
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.login-text {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.login-text:hover {
+  color: #007bff;
+}
+
+/* Sign In Button */
+.signin-btn {
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #007bff;
+  background-color: transparent;
+  color: #4c83bd;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signin-btn:hover {
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.promo-text {
+  background-color: #000000; /* black background */
+  color: #ffc107; /* yellow text, or you can use #ffffff for white */
+  font-size: 15px;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icons-container{
+  max-width: 90%;
+}
+
+
+/* 🔵 All Categories Button */
+.allCatTab {
+  background-color: #2bbef9;
+  padding: 12px 24px !important;
+  border-radius: 30px !important;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.allCatTab:hover {
+  background-color: #1aa7da;
+  transform: translateY(-2px);
+}
+
+/* 📌 Left Icon (Menu) */
+.allCatTab .icon1 svg {
+  font-size: 20px !important;
+}
+
+/* 📌 Right Icon (Arrow) */
+.allCatTab .icon2 svg {
+  font-size: 16px !important;
+  margin-left: auto;
+}
+
+/* 🔗 Navbar List */
+.navPart2 ul {
+  margin-bottom: 0;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style: none;
+  align-items: center;
+}
+
+/* 🔗 Nav Links */
+.navPart2 ul li a {
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #165cd3;
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.navPart2 ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #20a2d5;
+  transition: width 0.3s ease-in-out;
+}
+
+.navPart2 ul li a:hover {
+  color: #2bbef9;
+  transform: translateY(-1px);
+}
+
+.navPart2 ul li a:hover::after {
+  width: 100%;
+}
+
+/* 📁 Submenu container */
+.navPart2 ul li {
+  position: relative;
+}
+
+/* 🌈 Smooth Dropdown */
+.navPart2 ul li .submenu {
+  position: absolute;
+  top: 120%;
+  left: 0px;
+  min-width: 160px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+}
+
+/* 🚀 Show on hover */
+.navPart2 ul li:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  top: 100%;
+}
+
+/* 🟦 Submenu Buttons */
+.submenu button {
+  width: 100%;
+  margin: 6px 0;
+  text-align: left;
+  padding: 10px 14px;
+  background-color: #f5faff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #165cd3;
+  transition: all 0.25s ease;
+}
+
+.submenu button:hover {
+  background-color: #e0f4ff;
+  color: #0b8ecb;
+  transform: translateX(4px);
+}
+
+
+
+/* Container positioning */
+.navPart1 .catWrapper {
+  position: relative;
+}
+
+/* Sidebar dropdown base styles */
+.navPart1 .catWrapper .sidebarNav {
+  width: 220px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  background: #ffffff;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0;
+  z-index: 100;
+}
+
+/* Show sidebar when .open class is added */
+.navPart1 .catWrapper .sidebarNav.open {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  padding: 10px 0;
+}
+
+/* Sidebar list styling */
+.navPart1 .catWrapper .sidebarNav li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Button inside list items */
+.navPart1 .catWrapper .sidebarNav li button {
+  color: #333333;
+  background-color: transparent;
+  width: 100%;
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 6px;
+}
+
+/* Hover effect */
+.navPart1 .catWrapper .sidebarNav li button:hover {
+  background-color: #f0f4ff !important;
+  color: #007bff !important;
+}
+
+.homeBannerSection {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #f7f8fc, #e2e6ef);
+  border-radius: 12px;
+}
+
+
+.w-100 {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+  margin: 4px;
 }
